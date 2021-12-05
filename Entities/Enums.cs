@@ -21,4 +21,11 @@
         D,
         E
     }
+
+    internal enum PublicationType
+    {
+        Conference,
+        Journal,
+        Other
+    }
 }

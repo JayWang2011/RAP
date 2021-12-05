@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RAP.Entities
 {
+    [Table("Researcher")]
     internal class Researcher
     {
         public int Id { get; set; }
 
-        public ResearcherType Type { get; set; }
+        public string Type { get; set; }
 
         [MaxLength(20)]
         public string Given_Name { get; set; }
@@ -21,7 +24,7 @@ namespace RAP.Entities
         [MaxLength(64)]
         public string Unit { get; set; }
 
-        public Campus Campus { get; set; }
+        public string Campus { get; set; }
 
         [MaxLength(50)]
         public string Email { get; set; }
@@ -34,10 +37,12 @@ namespace RAP.Entities
 
         public int? Supervisor_Id { get; set; }
 
-        public Level Level { get; set; }
+        public string Level { get; set; }
 
         public DateTime Utas_Start { get; set; }
 
         public DateTime Current_Start { get; set; }
+
+        public List<Researcher_Publication> Researcher_Publications { get;set; }
     }
 }
